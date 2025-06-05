@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<idea-plugin>
+  <id>InteractiveExtension</id>
+  <name>C# Script Runner</name>
+  <version>1.0.0</version>
+  <vendor url="https://github.com/yourusername/InteractiveExtension">Your Name</vendor>
+  <description>Run C# scripts introduced in .NET 10 Preview 4 directly from Rider</description>
+  <idea-version since-build="233" until-build="233.*"/>
+  <depends>com.intellij.modules.rider</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <projectService serviceImplementation="InteractiveExtension.Services.CSharpScriptService"/>
+  </extensions>
+
+  <actions>
+    <action id="InteractiveExtension.RunCSharpScript" 
+            class="InteractiveExtension.Actions.RunCSharpScriptAction" 
+            text="Run C# Script" 
+            description="Run C# script using dotnet run">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="control shift R"/>
+    </action>
+  </actions>
+</idea-plugin>

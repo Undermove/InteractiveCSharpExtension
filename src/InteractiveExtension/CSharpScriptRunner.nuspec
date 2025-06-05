@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>CSharpScriptRunner</id>
+    <version>1.0.0</version>
+    <title>C# Script Runner</title>
+    <authors>InteractiveExtension</authors>
+    <owners>InteractiveExtension</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>Run C# scripts directly from Rider using .NET 8.0 or later. Supports macOS (including Intel processors) and Windows.</description>
+    <tags>rider plugin csharp script</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\net8.0\InteractiveExtension.dll" target="lib\net8.0" />
+    <file src="bin\Release\net8.0\InteractiveExtension.deps.json" target="lib\net8.0" />
+    <file src="plugin.xml" target="" />
+  </files>
+</package>

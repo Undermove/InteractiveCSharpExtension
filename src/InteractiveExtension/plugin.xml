@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<idea-plugin>
+  <id>com.interactiveextension.csharpscriptrunner</id>
+  <name>C# Script Runner</name>
+  <version>1.0.0</version>
+  <vendor>InteractiveExtension</vendor>
+  <description>Run C# scripts directly from Rider using .NET 8.0 or later. Supports macOS (including Intel processors) and Windows.</description>
+  <idea-version since-build="251" until-build="251.*"/>
+  <depends>com.intellij.modules.rider</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <projectService serviceImplementation="InteractiveExtension.Services.CSharpScriptService"/>
+  </extensions>
+
+  <actions>
+    <action id="InteractiveExtension.RunCSharpScript" 
+            class="InteractiveExtension.Actions.RunCSharpScriptAction" 
+            text="Run C# Script" 
+            description="Run C# script using dotnet run">
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="control shift R"/>
+    </action>
+  </actions>
+</idea-plugin>
